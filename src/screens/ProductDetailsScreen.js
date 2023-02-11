@@ -9,15 +9,14 @@ import {
   Button,
   Pressable,
 } from 'react-native';
-import products from '../data/products';
-
+import { useSelector } from 'react-redux';
 const ProductDetailsScreen = () => {
-  const product = products[0];
+  const product = useSelector((state) => state.products.selectedProduct);
   const { width } = useWindowDimensions();
 
   const addToCart = () => {
     console.warn('Added to cart');
-  }
+  };
   return (
     <View>
       <ScrollView>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: '500',
-    fontSize: 16
+    fontSize: 16,
   },
 });
 
