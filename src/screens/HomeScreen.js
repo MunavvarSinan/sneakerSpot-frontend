@@ -1,15 +1,23 @@
-import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import { View, FlatList, StyleSheet, Image, Pressable } from 'react-native';
 import React from 'react';
 import products from '../data/products';
-const HomeScreen = () => {
+
+const HomeScreen = ({ navigation }) => {
+  {
+    /** we can use navigation as props as along as we are navigating or the nvigation is a stack navigation */
+  }
   return (
     <View>
       <FlatList
         data={products}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
+          <Pressable
+            onPress={() => {
+              navigation.navigate('ProductDetails');
+            }}
+            style={styles.itemContainer}>
             <Image source={{ uri: item.image }} style={styles.image} />
-          </View>
+          </Pressable>
         )}
         numColumns={2}
       />
@@ -23,8 +31,8 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: '50%',
-    padding: 1
-  }
+    padding: 1,
+  },
 });
 
 export default HomeScreen;
