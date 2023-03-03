@@ -7,6 +7,7 @@ import ShoppingCartScreen from './screens/ShoppingCartScreen';
 import { Pressable, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useSelector } from 'react-redux';
+import Header from './components/Header';
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -19,16 +20,20 @@ const Navigation = () => {
           name='Home'
           component={HomeScreen}
           options={({ navigation }) => ({
-            headerRight: () => (
-              <Pressable
-                onPress={() => navigation.navigate('ShoppingCart')}
-                style={{ flexDirection: 'row' }}>
-                <FontAwesome5 name='shopping-bag' size={18} color='gray' />
-                <Text style={{ marginLeft: 5, fontWeight: '500' }}>
-                  {itemsCount}
-                </Text>
-              </Pressable>
+            // headerRight: () => (
+            //   <Pressable
+            //     onPress={() => navigation.navigate('ShoppingCart')}
+            //     style={{ flexDirection: 'row' }}>
+            //     <FontAwesome5 name='shopping-bag' size={18} color='gray' />
+            //     <Text style={{ marginLeft: 5, fontWeight: '500' }}>
+            //       {itemsCount}
+            //     </Text>
+            //   </Pressable>
+            // ),
+            header: () => (
+              <Header title='Odyssey' iconLeft='Menu' />
             ),
+            // headerShown: false
           })}
         />
         <Stack.Screen

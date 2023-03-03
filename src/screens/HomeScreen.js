@@ -2,6 +2,7 @@ import { View, FlatList, StyleSheet, Image, Pressable } from 'react-native';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSlice } from '../store/ProductsSlice';
+import Header from '../components/Header';
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
     /** we can use navigation as props as along as we are navigating or the nvigation is a stack navigation */
   }
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={products}
         renderItem={({ item }) => (
@@ -27,6 +28,7 @@ const HomeScreen = ({ navigation }) => {
             <Image source={{ uri: item.image }} style={styles.image} />
           </Pressable>
         )}
+        showsVerticalScrollIndicator={false}
         numColumns={2}
       />
     </View>
@@ -35,11 +37,16 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   image: {
     width: '100%',
+    borderRadius: 30,
     aspectRatio: 1, // to render it as a square so height will be calculated based on the aspect ration
   },
   itemContainer: {
-    width: '50%',
+    width: '100%',
     padding: 1,
+    marginBottom: 20,
+  },
+  container: {
+    padding: 20,
   },
 });
 
