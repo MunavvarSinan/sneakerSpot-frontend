@@ -7,12 +7,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Provider store={store}>
-        <View style={styles.container}>
-          <Navigation />
-          <StatusBar style='auto' />
-        </View>
-      </Provider>
+        <Provider store={store}>
+          <View style={styles.container}>
+            <Navigation />
+            <StatusBar style='auto' />
+          </View>
+        </Provider>
     </SafeAreaProvider>
   );
 }

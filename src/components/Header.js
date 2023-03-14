@@ -9,11 +9,18 @@ const Header = ({ title = '', iconLeft, iconRight }) => {
   const insets = useSafeAreaInsets();
   return (
     <View style={[styles.container, { marginTop: insets.top + 3 }]}>
-      <Icon icon={iconLeft} />
+      <Icon
+        icon='Wishlist'
+        onPress={() => navigation.navigate('WishlistScreen')}
+      />
       <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
         {title ? title : null}
       </Text>
-      <Icon icon='Cart' onPress={() => navigation.navigate('ShoppingCart')} />
+      <Icon
+        icon='Cart'
+        onPress={() => navigation.navigate('ShoppingCart')}
+        viewStyle={styles.direction}
+      />
     </View>
   );
 };
@@ -25,6 +32,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
     paddingHorizontal: 24,
+  },
+  direction: {
+    flexDirection: 'row',
   },
 });
 export default Header;

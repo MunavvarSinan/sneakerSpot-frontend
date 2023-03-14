@@ -1,56 +1,40 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { cartSlice } from '../store/cartSlice';
 import { useDispatch } from 'react-redux';
+import { productsSlice } from '../store/ProductsSlice';
+import { useNavigation } from '@react-navigation/native';
 
-const CartListItem = ({ cartItem }) => {
+const WishlistItem = ({ cartItem }) => {
   const dispatch = useDispatch();
-
-  const itemPrice = cartItem.product.price * cartItem.quantity;
-  const increaseQuantity = () => {
-    dispatch(
-      cartSlice.actions.changeQuantity({
-        productId: cartItem.product.id,
-        amount: 1,
-      }),
-    );
-  };
-
-  const decreaseQuantity = () => {
-    dispatch(
-      cartSlice.actions.changeQuantity({
-        productId: cartItem.product.id,
-        amount: -1,
-      }),
-    );
-  };
+  // console.log(cartItem);
+  const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() => {
+        {
+          //update selected products in the store
+          dispatch(
+            productsSlice.actions.setSelectedProducts(cartItem.wishlistItem.id),
+          );
+          navigation.navigate('ProductDetails');
+        }
+      }}>
       {/* we have managed to display the image and the text side by side by creating two view which one for image and rest for the right side part and adding flexdirection: 'row' so it will align the items in row */}
-      <Image source={{ uri: cartItem.product.image }} style={styles.image} />
+      <Image
+        source={{ uri: cartItem.wishlistItem.image }}
+        style={styles.image}
+      />
       <View style={styles.contentContainer}>
-        <Text style={styles.name}>{cartItem.product.name}</Text>
+        <Text style={styles.name}>{cartItem.wishlistItem.name}</Text>
         <Text style={styles.size}>Size {cartItem.size}</Text>
-
         <View style={styles.footer}>
-          <Feather
-            onPress={decreaseQuantity}
-            name='minus-circle'
-            size={24}
-            color='gray'
-          />
-          <Text style={styles.quantity}>{cartItem.quantity}</Text>
-          <Feather
-            onPress={increaseQuantity}
-            name='plus-circle'
-            size={24}
-            color='gray'
-          />
-          <Text style={styles.itemTotal}>₹{itemPrice}</Text>
+          <Text style={styles.itemTotal}>₹{cartItem.wishlistItem.price}</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -93,4 +77,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartListItem;
+export default WishlistItem;

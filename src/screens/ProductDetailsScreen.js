@@ -6,20 +6,33 @@ import {
   FlatList,
   useWindowDimensions,
   ScrollView,
-  Button,
+  ActivityIndicator,
   Pressable,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartSlice } from '../store/cartSlice';
+import { Icon } from '../components/Icon';
+import { productsSlice } from '../store/ProductsSlice';
+import React from 'react';
 
 const ProductDetailsScreen = () => {
   const product = useSelector((state) => state.products.selectedProduct);
-  console.log(product);
+  const [desc, setDesc] = React.useState(product.description.slice(0, 150));
+  const [readMore, setReadMore] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  // console.log(product);
   const { width } = useWindowDimensions();
   const dispatch = useDispatch();
   const addToCart = () => {
+    setLoading(true);
     dispatch(cartSlice.actions.addCartItem(product));
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   };
+  const wishlistedProducts = useSelector(
+    (state) => state.products.wishListedProducts,
+  );
   return (
     <View>
       <ScrollView>
@@ -33,15 +46,60 @@ const ProductDetailsScreen = () => {
           pagingEnabled // it will snap to the next image instead of scrolling smoothly
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>{product.name}</Text>
-          <Text style={styles.price}>${product.price}</Text>
-          <Text style={styles.description}>{product.description}</Text>
+          <View
+            style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text style={styles.title}>{product.name}</Text>
+            <Icon
+              icon={
+                wishlistedProducts
+                  .map((item) => item.wishlistItem.id)
+                  .includes(product.id)
+                  ? 'WishlistFilled'
+                  : 'Wishlist'
+              }
+              onPress={() => {
+                dispatch(
+                  productsSlice.actions.setWishListedProducts(product.id),
+                );
+              }}
+            />
+          </View>
+          <Text style={styles.price}>₹{product.price}</Text>
+
+          <Text style={styles.description}>
+            {desc} {!readMore && '....'}
+          </Text>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 15,
+              fontWeight: 'bold',
+              marginBottom: 10,
+            }}
+            onPress={() => {
+              if (!readMore) {
+                setDesc(product.description);
+                setReadMore(true);
+              } else {
+                setDesc(product.description.slice(0, 100));
+                setReadMore(false);
+              }
+            }}>
+            {readMore ? ' Show Less' : ' Read More'}
+          </Text>
+
           {/* we have a problem here that our description is goes out of the screen and there is no way to see the text so we need to encapsulate it in the Scroll view container to view it */}
         </View>
+        <Pressable onPress={addToCart} style={styles.button}>
+          <Text style={styles.buttonText}>
+            {loading ? (
+              <ActivityIndicator size={22} color='white' />
+            ) : (
+              'Add to cart'
+            )}
+          </Text>
+        </Pressable>
       </ScrollView>
-      <Pressable onPress={addToCart} style={styles.button}>
-        <Text style={styles.buttonText}>Add to cart</Text>
-      </Pressable>
     </View>
   );
 };
@@ -70,14 +128,15 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
   },
   button: {
-    position: 'absolute',
-    bottom: 30,
+    position: 'relative',
+    bottom: 10,
+    // flex: 1,
     width: '90%',
     backgroundColor: 'black',
     alignSelf: 'center',
     padding: 20,
     borderRadius: 100,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {

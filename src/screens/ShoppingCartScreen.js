@@ -12,15 +12,15 @@ const ShoppingCartTotals = () => {
     <View style={styles.totalContainer}>
       <View style={styles.row}>
         <Text style={styles.text}>Subtotal</Text>
-        <Text style={styles.text}>${subtotal}</Text>
+        <Text style={styles.text}>₹{subtotal}</Text>
       </View>
       <View style={styles.row}>
         <Text style={styles.text}>Delivery</Text>
-        <Text style={styles.text}>${delivery}</Text>
+        <Text style={styles.text}>₹{delivery}</Text>
       </View>
       <View style={styles.row}>
         <Text style={styles.textBold}>Total</Text>
-        <Text style={styles.textBold}>${total}</Text>
+        <Text style={styles.textBold}>₹{total}</Text>
       </View>
     </View>
   );

@@ -8,10 +8,11 @@ import { Pressable, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useSelector } from 'react-redux';
 import Header from './components/Header';
+import WishlistScreen from './screens/WishlistScreen';
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
-  const itemsCount = useSelector((state) => state.cart.items.length);
+  // const itemsCount = useSelector((state) => state.cart.items.length);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -25,14 +26,12 @@ const Navigation = () => {
             //     onPress={() => navigation.navigate('ShoppingCart')}
             //     style={{ flexDirection: 'row' }}>
             //     <FontAwesome5 name='shopping-bag' size={18} color='gray' />
-            //     <Text style={{ marginLeft: 5, fontWeight: '500' }}>
-            //       {itemsCount}
-            //     </Text>
+            // <Text style={{ marginLeft: 5, fontWeight: '500' }}>
+            //   {itemsCount}
+            // </Text>
             //   </Pressable>
             // ),
-            header: () => (
-              <Header title='Odyssey' iconLeft='Menu' />
-            ),
+            header: () => <Header title='Sneaker Spot' />,
             // headerShown: false
           })}
         />
@@ -42,6 +41,7 @@ const Navigation = () => {
           options={{ presentation: 'modal', headerShown: false }}
         />
         <Stack.Screen name='ShoppingCart' component={ShoppingCartScreen} />
+        <Stack.Screen name='WishlistScreen' component={WishlistScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
