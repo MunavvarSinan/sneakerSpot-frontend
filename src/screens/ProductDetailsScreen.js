@@ -14,25 +14,49 @@ import { cartSlice } from '../store/cartSlice';
 import { Icon } from '../components/Icon';
 import { productsSlice } from '../store/ProductsSlice';
 import React from 'react';
+import { useGetProductQuery } from '../store/apiSlice';
 
-const ProductDetailsScreen = () => {
-  const product = useSelector((state) => state.products.selectedProduct);
-  const [desc, setDesc] = React.useState(product.description.slice(0, 150));
+const ProductDetailsScreen = ({ route }) => {
+  const id = route.params.id;
+  console.log('id', id);
+
+  // const product = useSelector((state) => state.products.selectedProduct);
+  const [desc, setDesc] = React.useState();
   const [readMore, setReadMore] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
-  // console.log(product);
+  const [addToCartLoading, setAddToCartLoading] = React.useState(false);
   const { width } = useWindowDimensions();
-  const dispatch = useDispatch();
-  const addToCart = () => {
-    setLoading(true);
-    dispatch(cartSlice.actions.addCartItem(product));
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  };
   const wishlistedProducts = useSelector(
     (state) => state.products.wishListedProducts,
   );
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    setAddToCartLoading(true);
+    dispatch(cartSlice.actions.addCartItem(product));
+    setTimeout(() => {
+      setAddToCartLoading(false);
+    }, 1000);
+  };
+  const { data, isLoading, error } = useGetProductQuery(id);
+  if (isLoading) {
+    return (
+      <ActivityIndicator
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+          flex: 1,
+        }}
+        size='large'
+        color='black'
+      />
+    );
+  }
+  if (error) {
+    return <Text>Something went wrong</Text>;
+  }
+  const product = data.product;
+console.log(readMore);
+console.log(desc)
   return (
     <View>
       <ScrollView>
@@ -67,7 +91,8 @@ const ProductDetailsScreen = () => {
           <Text style={styles.price}>₹{product.price}</Text>
 
           <Text style={styles.description}>
-            {desc} {!readMore && '....'}
+            {desc !== undefined ? desc : product.description.slice(0, 100)}{' '}
+            {!readMore && '....'}
           </Text>
           <Text
             style={{
@@ -92,7 +117,7 @@ const ProductDetailsScreen = () => {
         </View>
         <Pressable onPress={addToCart} style={styles.button}>
           <Text style={styles.buttonText}>
-            {loading ? (
+            {addToCartLoading ? (
               <ActivityIndicator size={22} color='white' />
             ) : (
               'Add to cart'

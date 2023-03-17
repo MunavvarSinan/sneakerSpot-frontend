@@ -6,6 +6,7 @@ import {
   Pressable,
   Text,
   ImageBackground,
+  ActivityIndicator,
 } from 'react-native';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,30 +17,76 @@ import {
   GestureHandlerRootView,
   TouchableOpacity,
 } from 'react-native-gesture-handler';
+import { useGetProductsQuery } from '../store/apiSlice';
 
 const HomeScreen = ({ navigation }) => {
   const [category, setCategory] = React.useState('Adidas');
-  console.log(category);
   const dispatch = useDispatch();
+  const featuredProducts = [];
   // we are getting data from the store which is products and we are getting the products from the store which is defined in the initial state in the productsSlice.js
-  const products = useSelector((state) => state.products.products);
   const wishlistedProducts = useSelector(
     (state) => state.products.wishListedProducts,
   );
 
+  const { data, isLoading, error } = useGetProductsQuery();
+
+  // this is to create a random array of 10 numbers for the carousel to select random products
+  const { randArray, itemId } = React.useMemo(() => {
+    const randArray = [];
+    while (randArray.length < 10) {
+      const r = Math.floor(Math.random() * 20);
+      if (randArray.indexOf(r) === -1) {
+        randArray.push(r);
+      }
+    }
+    const itemId = randArray[0];
+    return { randArray, itemId };
+  }, []);
+
+  React.useMemo(() => {
+    const randArray = [4, 19, 3, 25, 12, 28, 10, 29, 13, 36];
+    randArray.map((item) => {
+      if (data) {
+        const prod = data.products.find((p) => p.id === item.toString());
+
+        if (prod) {
+          featuredProducts.push(prod);
+        }
+      }
+    });
+  }, [featuredProducts]);
+
+  if (isLoading) {
+    return (
+      <ActivityIndicator
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+          flex: 1,
+        }}
+        size='large'
+        color='black'
+      />
+    );
+  }
+  if (error) {
+    return <Text>Something went wrong</Text>;
+  }
+
   {
     /** we can use navigation as props as along as we are navigating or the nvigation is a stack navigation */
   }
-  const _colors = {
-    active: `#FEEC66`,
-    inactive: `#FCD25900`,
-  };
+  // const _colors = {
+  //   active: `#FEEC66`,
+  //   inactive: `#FCD25900`,
+  // };
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={styles.container}>
         <FlatList
-          data={products}
+          data={data.products}
           ListHeaderComponent={() => (
             <>
               <ImageBackground
@@ -56,7 +103,11 @@ const HomeScreen = ({ navigation }) => {
               </ImageBackground>
               <View>
                 <View style={{ marginLeft: 30 }}>
-                  <CardCarousel />
+                  <CardCarousel
+                    products={data.products}
+                    randArray={randArray}
+                    itId={itemId}
+                  />
                 </View>
                 <View style={{ flex: 1 }}>
                   <View
@@ -75,10 +126,6 @@ const HomeScreen = ({ navigation }) => {
                           borderWidth: 1.5,
                           borderColor: 'gray',
                           borderRadius: 12,
-                          // backgroundColor:
-                          //   category === 'Adidas'
-                          //     ? _colors.active
-                          //     : _colors.inactive,
                         }}>
                         <ImageBackground
                           source={require('../assets/icons/highlighter.png')}
@@ -142,12 +189,14 @@ const HomeScreen = ({ navigation }) => {
                     <Pressable
                       onPress={() => {
                         {
-                          console.log(item.id);
+                          console.log('ITem id in home screen', item.id);
                           //update selected products in the store
-                          dispatch(
-                            productsSlice.actions.setSelectedProducts(item.id),
-                          );
-                          navigation.navigate('ProductDetails');
+                          // dispatch(
+                          //   productsSlice.actions.setSelectedProducts(item.id),
+                          // );
+                          navigation.navigate('ProductDetails', {
+                            id: item.id,
+                          });
                         }
                       }}>
                       <Image

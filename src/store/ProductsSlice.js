@@ -21,8 +21,8 @@ export const productsSlice = createSlice({
       );
     },
     setWishListedProducts: (state, action) => {
-      
       const wishlist = action.payload;
+      console.log(wishlist)
       const prod = state.products.find((p) => p.id === wishlist);
 
       const wishlistedItem = state.wishListedProducts.find(

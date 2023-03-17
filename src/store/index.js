@@ -1,9 +1,16 @@
 import { configureStore, createSelector } from '@reduxjs/toolkit';
 import { productsSlice } from './ProductsSlice';
 import { cartSlice } from './cartSlice';
+import { apiSlice } from './apiSlice';
 
 export const store = configureStore({
-  reducer: { products: productsSlice.reducer, cart: cartSlice.reducer },
+  reducer: {
+    products: productsSlice.reducer,
+    cart: cartSlice.reducer,
+    api: apiSlice.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
 export const selectSubTotal = (state) =>
@@ -34,3 +41,5 @@ export const selectTotal = createSelector(
   selectDeliveryPrice,
   (subTotal, deliveryPrice) => subTotal + deliveryPrice,
 );
+
+

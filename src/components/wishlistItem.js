@@ -6,6 +6,7 @@ import { productsSlice } from '../store/ProductsSlice';
 import { useNavigation } from '@react-navigation/native';
 
 const WishlistItem = ({ cartItem }) => {
+  console.log(cartItem);
   const dispatch = useDispatch();
   // console.log(cartItem);
   const navigation = useNavigation();
@@ -19,7 +20,9 @@ const WishlistItem = ({ cartItem }) => {
           dispatch(
             productsSlice.actions.setSelectedProducts(cartItem.wishlistItem.id),
           );
-          navigation.navigate('ProductDetails');
+          navigation.navigate('ProductDetails', {
+            id: cartItem.wishlistItem.id,
+          });
         }
       }}>
       {/* we have managed to display the image and the text side by side by creating two view which one for image and rest for the right side part and adding flexdirection: 'row' so it will align the items in row */}

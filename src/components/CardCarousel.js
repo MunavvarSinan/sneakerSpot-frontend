@@ -65,18 +65,38 @@ const ITEM_HEIGHT = ITEM_WIDTH * 1.7;
 //   );
 // };
 
-export default function CardCarousel() {
+const CardCarousel = ({ products, randArray, itId }) => {
   const scrollX = React.useRef(new Animated.Value(0)).current;
   const scrollXAnimated = React.useRef(new Animated.Value(0)).current;
   const [scrollIndex, setScrollIndex] = React.useState(0);
-  const [rand, setRand] = React.useState([]);
-  const [itemId, setItemId] = React.useState(0);
+  const [id, setId] = React.useState('');
+  // const [rand, setRand] = React.useState([]);
+  const [itemId, setItemId] = React.useState(itId);
+  console.log(itemId);
   // const [rand, setRand] = React.useState([]);
   const featuredProducts = [];
+
   const setAnimatedIndex = React.useCallback((i) => {
+    console.log('setAnimatedIndex', i);
+    console.log('setAnimatedIndex', scrollIndex);
+    console.log('setAnimatedIndex', scrollX);
     setScrollIndex(i);
     scrollX.setValue(i);
   }, []);
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    console.log('Before dispatch..........', scrollIndex);
+    console.log(scrollX);
+
+    if (id) {
+      console.log('id is set');
+      dispatch(productsSlice.actions.setWishListedProducts(id));
+      console.log('after dispatch *******', scrollIndex);
+      console.log(scrollX);
+    }
+  }, [id]);
 
   // interconnected animations aka reactive animations :D
   React.useEffect(() => {
@@ -85,32 +105,31 @@ export default function CardCarousel() {
       useNativeDriver: true,
     }).start();
   });
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.products);
+  // const products = useSelector((state) => state.products.products);
 
-  const selectRandomProduct = React.useCallback(() => {
-    const randArray = [];
-    while (randArray.length < 10) {
-      const r = Math.floor(Math.random() * products.length);
-      if (randArray.indexOf(r) === -1) {
-        randArray.push(r);
-      }
-    }
-    setRand(randArray);
-    setItemId(randArray[0]);
-  }, [products]);
+  // const selectRandomProduct = React.useCallback(() => {
+  //   const randArray = [];
+  //   while (randArray.length < 10) {
+  //     const r = Math.floor(Math.random() * products.length);
+  //     if (randArray.indexOf(r) === -1) {
+  //       randArray.push(r);
+  //     }
+  //   }
+  //   setRand(randArray);
+  //   setItemId(randArray[0]);
+  // }, [products]);
 
-  React.useLayoutEffect(() => {
-    selectRandomProduct();
-  }, [selectRandomProduct]);
+  // React.useEffect(() => {
+  //   selectRandomProduct();
+  // }, []);
 
-  rand.map((item) => {
+  randArray.map((item) => {
     const prod = products.find((p) => p.id === item.toString());
     if (prod) {
       featuredProducts.push(prod);
     }
   });
-  console.log(rand);
+  console.log(randArray);
   // console.log(products);
   const wishlistedProducts = useSelector(
     (state) => state.products.wishListedProducts,
@@ -123,12 +142,12 @@ export default function CardCarousel() {
         if (e.nativeEvent.state === State.END) {
           if (scrollIndex === featuredProducts.length - 1) {
             // setAnimatedIndex(0)
+
             return;
           }
 
           setAnimatedIndex(scrollIndex + 1);
-          setItemId(rand[scrollIndex + 1]);
-          console.log(itemId);
+          setItemId(randArray[scrollIndex + 1]);
         }
       }}>
       <FlingGestureHandler
@@ -140,8 +159,7 @@ export default function CardCarousel() {
               return;
             }
             setAnimatedIndex(scrollIndex - 1);
-            setItemId(rand[scrollIndex - 1]);
-            console.log(itemId);
+            setItemId(randArray[scrollIndex - 1]);
           }
         }}>
         <SafeAreaView style={styles.container}>
@@ -225,12 +243,14 @@ export default function CardCarousel() {
                         {
                           // console.log(scrollIndex);
                           //update selected products in the store
-                          dispatch(
-                            productsSlice.actions.setSelectedProducts(
-                              itemId.toString(),
-                            ),
-                          );
-                          navigation.navigate('ProductDetails');
+                          // dispatch(
+                          //   productsSlice.actions.setSelectedProducts(
+                          //     itemId.toString(),
+                          //   ),
+                          // );
+                          navigation.navigate('ProductDetails', {
+                            id: itemId.toString(),
+                          });
                         }
                       }}>
                       <Image
@@ -243,12 +263,14 @@ export default function CardCarousel() {
                         onPress={() => {
                           {
                             //update selected products in the store
-                            dispatch(
-                              productsSlice.actions.setSelectedProducts(
-                                itemId.toString(),
-                              ),
-                            );
-                            navigation.navigate('ProductDetails');
+                            // dispatch(
+                            //   productsSlice.actions.setSelectedProducts(
+                            //     itemId.toString(),
+                            //   ),
+                            // );
+                            navigation.navigate('ProductDetails', {
+                              id: itemId.toString(),
+                            });
                           }
                         }}>
                         <Text style={styles.title}>{item.name}</Text>
@@ -264,11 +286,9 @@ export default function CardCarousel() {
                         }
                         onPress={() => {
                           // setWishlist(!wishlist),
-                          dispatch(
-                            productsSlice.actions.setWishListedProducts(
-                              item.id,
-                            ),
-                          );
+                          console.log('ON click kkkkk ', scrollIndex);
+                          setId(item.id);
+                          // console.log(wishlist);
                         }}
                       />
                     </View>
@@ -281,7 +301,7 @@ export default function CardCarousel() {
       </FlingGestureHandler>
     </FlingGestureHandler>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -349,3 +369,5 @@ const styles = StyleSheet.create({
     marginTop: -10,
   },
 });
+
+export default React.memo(CardCarousel);
