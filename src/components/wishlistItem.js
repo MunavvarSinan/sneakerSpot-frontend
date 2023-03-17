@@ -6,7 +6,7 @@ import { productsSlice } from '../store/ProductsSlice';
 import { useNavigation } from '@react-navigation/native';
 
 const WishlistItem = ({ cartItem }) => {
-  console.log(cartItem);
+  
   const dispatch = useDispatch();
   // console.log(cartItem);
   const navigation = useNavigation();

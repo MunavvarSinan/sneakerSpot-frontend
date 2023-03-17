@@ -43,18 +43,18 @@ const HomeScreen = ({ navigation }) => {
     return { randArray, itemId };
   }, []);
 
-  React.useMemo(() => {
-    const randArray = [4, 19, 3, 25, 12, 28, 10, 29, 13, 36];
-    randArray.map((item) => {
-      if (data) {
-        const prod = data.products.find((p) => p.id === item.toString());
+  // React.useMemo(() => {
+  //   const randArray = [4, 19, 3, 25, 12, 28, 10, 29, 13, 36];
+  //   randArray.map((item) => {
+  //     if (data) {
+  //       const prod = data.products.find((p) => p.id === item.toString());
 
-        if (prod) {
-          featuredProducts.push(prod);
-        }
-      }
-    });
-  }, [featuredProducts]);
+  //       if (prod) {
+  //         featuredProducts.push(prod);
+  //       }
+  //     }
+  //   });
+  // }, [featuredProducts]);
 
   if (isLoading) {
     return (
@@ -189,7 +189,6 @@ const HomeScreen = ({ navigation }) => {
                     <Pressable
                       onPress={() => {
                         {
-                          console.log('ITem id in home screen', item.id);
                           //update selected products in the store
                           // dispatch(
                           //   productsSlice.actions.setSelectedProducts(item.id),

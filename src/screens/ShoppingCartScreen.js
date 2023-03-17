@@ -1,8 +1,19 @@
-import { View, Text, FlatList, StyleSheet, Pressable } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  Pressable,
+  ActivityIndicator,
+  Alert,
+} from 'react-native';
 import React from 'react';
+import { useCreateOrderMutation } from '../store/apiSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectDeliveryPrice, selectSubTotal, selectTotal } from '../store';
 import CartListItem from '../components/CartListItem';
-import { useSelector } from 'react-redux';
-import {  selectDeliveryPrice, selectSubTotal, selectTotal } from '../store';
+import { useNavigation } from '@react-navigation/native';
+import { cartSlice } from '../store/cartSlice';
 
 const ShoppingCartTotals = () => {
   const subtotal = useSelector(selectSubTotal);
@@ -27,17 +38,90 @@ const ShoppingCartTotals = () => {
 };
 
 const ShoppingCartScreen = () => {
+  const navigation = useNavigation();
   const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
+  const prodId = useSelector((state) =>
+    state.cart.items.map((item) => item.product),
+  );
+
+  const subtotal = useSelector(selectSubTotal);
+  const delivery = useSelector(selectDeliveryPrice);
+  const total = useSelector(selectTotal);
+  const [createOrder, { data, isLoading, error }] = useCreateOrderMutation();
+  const handleCheckout = async () => {
+    const result = await createOrder({
+      productId: prodId.map((item) => item.id),
+      quantity: cartItems.quantity,
+      subTotal: subtotal,
+      deliveryFee: delivery,
+      total: total,
+      name: 'munavvar',
+      email: 'munavvar@gmail.com',
+      address: ' kannur',
+    });
+    console.log(result.data);
+    // const result = { success: true };
+    if (result.data?.success === true) {
+      // Alert.alert(
+      //   'Order Placed',
+      //   `Your order has been placed successfully \n Order id: ${result.data.order.ref}`,
+      //   [
+      //     {
+      //       text: 'OK',
+      //       onPress: () => {
+      //         navigation.navigate('Home');
+      //       },
+      //     },
+      //   ],
+      // );
+      Alert.alert(
+        'Order Placed',
+        `Your order has been placed successfully Order id: ${result.data.order.ref}`,
+        [
+          {
+            text: 'OK',
+            onPress: () => {
+              navigation.navigate('Home'),
+                dispatch(cartSlice.actions.clearCart());
+            },
+          },
+        ],
+      );
+    }
+  };
+
+  if (error) {
+    return <Text>Something went wrong</Text>;
+  }
+
   return (
     <>
-      <FlatList
-        data={cartItems}
-        renderItem={({ item }) => <CartListItem cartItem={item} />}
-        ListFooterComponent={ShoppingCartTotals}
-      />
-      <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Checkout</Text>
-      </Pressable>
+      {cartItems.length !== 0 ? (
+        <>
+          <FlatList
+            data={cartItems}
+            renderItem={({ item }) => <CartListItem cartItem={item} />}
+            ListFooterComponent={ShoppingCartTotals}
+          />
+          <Pressable style={styles.button} onPress={handleCheckout}>
+            <Text style={styles.buttonText}>
+              {isLoading ? (
+                <ActivityIndicator ActivityIndicator size={22} color='white' />
+              ) : (
+                'Checkout'
+              )}
+            </Text>
+          </Pressable>
+        </>
+      ) : (
+        <View
+          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ fontSize: 20, color: 'gray' }}>
+            Your cart is empty
+          </Text>
+        </View>
+      )}
     </>
   );
 };

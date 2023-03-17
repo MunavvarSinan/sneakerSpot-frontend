@@ -10,10 +10,19 @@ const WishlistScreen = () => {
   );
   return (
     <>
-      <FlatList
-        data={wishlistItems}
-        renderItem={({ item }) => <WishlistItem cartItem={item} />}
-      />
+      {wishlistItems.length === 0 ? (
+        <View
+          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ fontSize: 20, color: 'gray' }}>
+            Your wishlist is empty
+          </Text>
+        </View>
+      ) : (
+        <FlatList
+          data={wishlistItems}
+          renderItem={({ item }) => <WishlistItem cartItem={item} />}
+        />
+      )}
     </>
   );
 };

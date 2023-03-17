@@ -72,14 +72,10 @@ const CardCarousel = ({ products, randArray, itId }) => {
   const [id, setId] = React.useState('');
   // const [rand, setRand] = React.useState([]);
   const [itemId, setItemId] = React.useState(itId);
-  console.log(itemId);
   // const [rand, setRand] = React.useState([]);
   const featuredProducts = [];
 
   const setAnimatedIndex = React.useCallback((i) => {
-    console.log('setAnimatedIndex', i);
-    console.log('setAnimatedIndex', scrollIndex);
-    console.log('setAnimatedIndex', scrollX);
     setScrollIndex(i);
     scrollX.setValue(i);
   }, []);
@@ -87,14 +83,8 @@ const CardCarousel = ({ products, randArray, itId }) => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    console.log('Before dispatch..........', scrollIndex);
-    console.log(scrollX);
-
     if (id) {
-      console.log('id is set');
       dispatch(productsSlice.actions.setWishListedProducts(id));
-      console.log('after dispatch *******', scrollIndex);
-      console.log(scrollX);
     }
   }, [id]);
 
@@ -129,8 +119,7 @@ const CardCarousel = ({ products, randArray, itId }) => {
       featuredProducts.push(prod);
     }
   });
-  console.log(randArray);
-  // console.log(products);
+
   const wishlistedProducts = useSelector(
     (state) => state.products.wishListedProducts,
   );
@@ -285,10 +274,7 @@ const CardCarousel = ({ products, randArray, itId }) => {
                             : 'Wishlist'
                         }
                         onPress={() => {
-                          // setWishlist(!wishlist),
-                          console.log('ON click kkkkk ', scrollIndex);
                           setId(item.id);
-                          // console.log(wishlist);
                         }}
                       />
                     </View>

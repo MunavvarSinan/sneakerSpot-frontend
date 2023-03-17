@@ -18,7 +18,6 @@ import { useGetProductQuery } from '../store/apiSlice';
 
 const ProductDetailsScreen = ({ route }) => {
   const id = route.params.id;
-  console.log('id', id);
 
   // const product = useSelector((state) => state.products.selectedProduct);
   const [desc, setDesc] = React.useState();
@@ -55,8 +54,6 @@ const ProductDetailsScreen = ({ route }) => {
     return <Text>Something went wrong</Text>;
   }
   const product = data.product;
-console.log(readMore);
-console.log(desc)
   return (
     <View>
       <ScrollView>
