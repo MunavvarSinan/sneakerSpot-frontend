@@ -8,7 +8,7 @@ import {
   ImageBackground,
   ActivityIndicator,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSlice } from '../store/ProductsSlice';
 import { Icon } from '../components/Icon';
@@ -28,7 +28,11 @@ const HomeScreen = ({ navigation }) => {
   );
 
   const { data, isLoading, error } = useGetProductsQuery();
-
+  useEffect(() => {
+    if (data?.products) {
+      dispatch(productsSlice.actions.setProducts(data.products));
+    }
+  }, [data]);
   // this is to create a random array of 10 numbers for the carousel to select random products
   const { randArray, itemId } = React.useMemo(() => {
     const randArray = [];
@@ -192,6 +196,7 @@ const HomeScreen = ({ navigation }) => {
                           // dispatch(
                           //   productsSlice.actions.setSelectedProducts(item.id),
                           // );
+                          console.log(item.id);
                           navigation.navigate('ProductDetails', {
                             id: item.id,
                           });

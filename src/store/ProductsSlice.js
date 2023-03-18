@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import products from '../data/products';
 
 const initialState = {
-  products: products,
+  products: [],
   selectedProduct: null,
   wishListedProducts: [],
 };
@@ -11,9 +11,12 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
     setSelectedProducts: (state, action) => {
       const productIndex = action.payload;
-      console.log(productIndex)
+      console.log(productIndex);
       const productDetails = state.products[productIndex];
       // console.log(productDetails);
       state.selectedProduct = state.products.find(
@@ -22,7 +25,7 @@ export const productsSlice = createSlice({
     },
     setWishListedProducts: (state, action) => {
       const wishlist = action.payload;
-      console.log(wishlist)
+      console.log(wishlist);
       const prod = state.products.find((p) => p.id === wishlist);
 
       const wishlistedItem = state.wishListedProducts.find(
