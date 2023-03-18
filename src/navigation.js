@@ -9,6 +9,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useSelector } from 'react-redux';
 import Header from './components/Header';
 import WishlistScreen from './screens/WishlistScreen';
+import TrackingOrderScreen from './components/TrackingOrder';
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -32,6 +33,7 @@ const Navigation = () => {
             //   </Pressable>
             // ),
             header: () => <Header title='Sneaker Spot' />,
+            
             // headerShown: false
           })}
         />
@@ -42,6 +44,7 @@ const Navigation = () => {
         />
         <Stack.Screen name='ShoppingCart' component={ShoppingCartScreen} />
         <Stack.Screen name='WishlistScreen' component={WishlistScreen} />
+        {/* <Stack.Screen name='TrackOrder' component={TrackingOrderScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

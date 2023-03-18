@@ -1,4 +1,4 @@
-export default [
+[
   {
     id: '1',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/nike/nike1.png',
@@ -11,10 +11,11 @@ export default [
     ],
     name: 'Wild Berry',
     category: 'Men',
-    price: 7960,
+    price: 199,
     brand: 'Nike',
     sizes: [39, 40, 41],
-    description: "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
+    description:
+      "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
   },
   {
     id: '2',
@@ -28,10 +29,11 @@ export default [
     ],
     name: 'Air Force 1',
     category: 'Men',
-    price: 5469,
+    price: 99,
     brand: 'Nike',
     sizes: [39, 40, 41, 42, 43],
-    description: "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
+    description:
+      "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
   },
   {
     id: '3',
@@ -40,17 +42,17 @@ export default [
     images: [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1a7f9cad-5c96-446f-a9d5-2dfb9c34910f/cosmic-unity-2-basketball-shoes-S6n2s3.png',
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d8924d02-168d-4cb7-8944-21b1cb0d0c22/cosmic-unity-2-basketball-shoes-S6n2s3.png',
-      ,
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/db4509bc-8fbb-4f07-bc0a-8c5f94d257a1/cosmic-unity-2-basketball-shoes-S6n2s3.png',
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/53651673-c48a-4343-a2a0-52349b474af9/cosmic-unity-2-basketball-shoes-S6n2s3.png',
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/26672ee4-ee88-4ed0-a0c4-0b4bc91fc3d1/cosmic-unity-2-basketball-shoes-S6n2s3.png',
     ],
     name: 'Cosmic Unity 2',
     category: 'Men',
-    price: 13999,
+    price: 169.61,
     sizes: [38, 39, 40, 41, 42],
     brand: 'Nike',
-    description: "Celebrate the love and joy of the game with the Nike Cosmic Unity 2. Made from at least 20% recycled content by weight, it provides enhanced responsiveness and support. This shoe will help keep you fresh and secure without overloading it with extra grams, so that you can focus on locking down the perimeter defensively or starting the fast break after a rebound.",
+    description:
+      'Celebrate the love and joy of the game with the Nike Cosmic Unity 2. Made from at least 20% recycled content by weight, it provides enhanced responsiveness and support. This shoe will help keep you fresh and secure without overloading it with extra grams, so that you can focus on locking down the perimeter defensively or starting the fast break after a rebound.',
   },
   {
     id: '4',
@@ -66,9 +68,10 @@ export default [
     name: 'Air Zoom Flight',
     category: 'Men',
     brand: 'Nike',
-    price: 14995,
+    price: 181.68,
     sizes: [39, 40, 41, 42, 45],
-    description: "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
+    description:
+      "Have you ever had déjà shoe? Flash back to one of the first shoes to popularise Zoom Air technology and relive the hoops revolution. With its flowing lines, patent leather accents and futuristic 'bug eye' detailing, the Air Zoom Flight 95 is no dream—it's your ticket to turn heads.",
   },
   {
     id: '5',
@@ -84,9 +87,10 @@ export default [
     name: 'Air Penny 2',
     category: 'Men',
     brand: 'Nike',
-    price: 18395,
+    price: 222.88,
     sizes: [36, 40, 41, 42, 47],
-    description: "Flash back to '96 in the Air Penny 2. Bold and unmistakable, it was the first Air Penny to combine Max and Zoom Air technology. Now, the daring design comes wrapped in patent leather, while the signature 1 Cent logo on the side and the wavy design lines keep the coveted off-court appeal strong.",
+    description:
+      "Flash back to '96 in the Air Penny 2. Bold and unmistakable, it was the first Air Penny to combine Max and Zoom Air technology. Now, the daring design comes wrapped in patent leather, while the signature 1 Cent logo on the side and the wavy design lines keep the coveted off-court appeal strong.",
   },
   {
     id: '6',
@@ -102,9 +106,10 @@ export default [
     name: 'Jordan Max',
     category: 'Men',
     brand: 'Nike',
-    price: 11295,
+    price: 136.85,
     sizes: [37, 38, 40, 41, 42],
-    description: "The lightweight cushioning found in this next generation basketball shoe takes cues from its predecessors. Take flight on the court with timeless style and cloud-like heel support.",
+    description:
+      'The lightweight cushioning found in this next generation basketball shoe takes cues from its predecessors. Take flight on the court with timeless style and cloud-like heel support.',
   },
   {
     id: '7',
@@ -120,9 +125,10 @@ export default [
     name: 'Air Jordan 6',
     category: 'Men',
     brand: 'Nike',
-    price: 18395,
+    price: 222.88,
     sizes: [39, 40, 41],
-    description: "MJ's sixth signature shoe debuted during the 1990–1991 season as His Airness battled rivals in pursuit of an elusive first championship.Now, it's back in a variety of colour schemes.Gear up for the 30th anniversary of the Air Jordan 6 with this timeless classic.",
+    description:
+      "MJ's sixth signature shoe debuted during the 1990–1991 season as His Airness battled rivals in pursuit of an elusive first championship.Now, it's back in a variety of colour schemes.Gear up for the 30th anniversary of the Air Jordan 6 with this timeless classic.",
   },
   {
     id: '8',
@@ -138,9 +144,10 @@ export default [
     name: 'Air Max Alpha',
     category: 'Men',
     brand: 'Nike',
-    price: 7495,
+    price: 90.81,
     sizes: [40, 41, 42],
-    description: "Finish your last rep with power and rack it with a roar that stuns the gym floor in the Nike Air Max Alpha Trainer 5. Max Air cushioning offers comfortable stability for lifting whether it's a light or heavy day. A wide, flat base gives you enhanced stability and grip for all kinds of tough workouts without sacrificing style, as you roam from station to station and set to set.",
+    description:
+      "Finish your last rep with power and rack it with a roar that stuns the gym floor in the Nike Air Max Alpha Trainer 5. Max Air cushioning offers comfortable stability for lifting whether it's a light or heavy day. A wide, flat base gives you enhanced stability and grip for all kinds of tough workouts without sacrificing style, as you roam from station to station and set to set.",
   },
   {
     id: '9',
@@ -156,9 +163,10 @@ export default [
     name: 'Air Jordan 7',
     category: 'Men',
     brand: 'Nike',
-    price: 19295,
+    price: 233.78,
     sizes: [40, 41, 42, 43, 44],
-    description: "Inspired by the shoes MJ wore during the '92 season, the latest iteration of the Air Jordan 7 revives the championship legacy for a new generation. Splashes of colour deliver season-right flavour, while premium leather and textiles up your off-court allure.",
+    description:
+      "Inspired by the shoes MJ wore during the '92 season, the latest iteration of the Air Jordan 7 revives the championship legacy for a new generation. Splashes of colour deliver season-right flavour, while premium leather and textiles up your off-court allure.",
   },
   {
     id: '10',
@@ -172,11 +180,12 @@ export default [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/399dd151-d280-4195-bf17-7116200a26f7/ispa-sense-flyknit-shoes-CzhcwB.png',
     ],
     name: 'ISPA Sense Flyknit',
-    price: 18395,
+    price: 222.88,
     category: 'Men',
     brand: 'Nike',
     sizes: [37, 40, 41, 42],
-    description: "Breathe in. Breathe out. The ISPA Sense is your ticket to tranquillity. Mixing sustainable materials (it's made from at least 20% recycled content by weight) with meditative comfort, the design pulls inspiration from Zen gardens. The stretchy, bootie-like upper with an airy Flyknit design integrates venting and padding for extra on-foot bliss. Tie it all together with the sleek lacing system and then stay upright with added traction on the outsole. Do good, look good, and overcome the urban environment's most challenging obstacles with this fresh design that gives new meaning to rest and relaxation.",
+    description:
+      "Breathe in. Breathe out. The ISPA Sense is your ticket to tranquillity. Mixing sustainable materials (it's made from at least 20% recycled content by weight) with meditative comfort, the design pulls inspiration from Zen gardens. The stretchy, bootie-like upper with an airy Flyknit design integrates venting and padding for extra on-foot bliss. Tie it all together with the sleek lacing system and then stay upright with added traction on the outsole. Do good, look good, and overcome the urban environment's most challenging obstacles with this fresh design that gives new meaning to rest and relaxation.",
   },
   {
     id: '11',
@@ -190,11 +199,12 @@ export default [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/273dc3f3-306b-41b6-8af4-c241330f7037/air-max-97-og-shoes-pKxPsp.png',
     ],
     name: 'Air Max 97 OG',
-    price: 6399,
+    price: 99.53,
     category: 'Men',
     brand: 'Nike',
     sizes: [39, 41, 42],
-    description: "Take your sneaker game to the Max in kicks that bring back all the best trends of '80s. Soft, velvety nubuck and supple suede are paired with knit textiles for a premium touch while a Waffle outsole delivers heritage style. Visible Max Air cushioning helps keep your every step comfortable.",
+    description:
+      "Take your sneaker game to the Max in kicks that bring back all the best trends of '80s. Soft, velvety nubuck and supple suede are paired with knit textiles for a premium touch while a Waffle outsole delivers heritage style. Visible Max Air cushioning helps keep your every step comfortable.",
   },
   {
     id: '12',
@@ -210,9 +220,10 @@ export default [
     name: 'Air Max SYSTM',
     category: 'Men',
     brand: 'Nike',
-    price: 8695,
+    price: 90.35,
     sizes: [39, 40, 41, 45],
-    description: "Take your sneaker game to the Max in kicks that bring back all the best trends of '80s. Soft, velvety nubuck and supple suede are paired with knit textiles for a premium touch while a Waffle outsole delivers heritage style. Visible Max Air cushioning helps keep your every step comfortable.",
+    description:
+      "Take your sneaker game to the Max in kicks that bring back all the best trends of '80s. Soft, velvety nubuck and supple suede are paired with knit textiles for a premium touch while a Waffle outsole delivers heritage style. Visible Max Air cushioning helps keep your every step comfortable.",
   },
   {
     id: '13',
@@ -229,9 +240,10 @@ export default [
     name: 'Why Not .6 PF',
     category: 'Men',
     brand: 'Nike',
-    price: 13995,
+    price: 169.57,
     sizes: [39, 41, 42, 45],
-    description: "Russell Westbrook's 6th signature shoe is—you guessed it—all about speed. To get you goin' as fast as possible, we've wrapped the rubber outsole nearly up to the midsole, so you're not gonna slip when you explode from 0 to 100. Added security comes from the interior bootie that keeps you strapped in as you jet across the court. It's all held together by an outer shroud and fastened with a zip collar that spells out Russell's signature question: \"Why Not?\"",
+    description:
+      "Russell Westbrook's 6th signature shoe is—you guessed it—all about speed. To get you goin' as fast as possible, we've wrapped the rubber outsole nearly up to the midsole, so you're not gonna slip when you explode from 0 to 100. Added security comes from the interior bootie that keeps you strapped in as you jet across the court. It's all held together by an outer shroud and fastened with a zip collar that spells out Russell's signature question: 'Why Not?'",
   },
   {
     id: '14',
@@ -247,9 +259,10 @@ export default [
     name: 'Court Vision Low',
     category: 'Men',
     brand: 'Nike',
-    price: 6295,
+    price: 90.53,
     sizes: [39, 41, 42, 43, 46],
-    description: "In love with the look of old-school basketball but craving the fast-paced nature of today's game. Meet the Nike Court Vision Low. These everyday kicks are made from materials that echo b-ball shoes of the '80s. To give them an even stronger retro feel, we added university-inspired details sure to remind you of your days on campus.",
+    description:
+      "In love with the look of old-school basketball but craving the fast-paced nature of today's game. Meet the Nike Court Vision Low. These everyday kicks are made from materials that echo b-ball shoes of the '80s. To give them an even stronger retro feel, we added university-inspired details sure to remind you of your days on campus.",
   },
   {
     id: '15',
@@ -267,9 +280,10 @@ export default [
     name: 'Jordan XXXVII',
     category: 'Men',
     brand: 'Nike',
-    price: 16295,
+    price: 197.43,
     sizes: [39, 41, 42, 46],
-    description: "You've got the hops and the speed—lace up in shoes that enhance what you bring to the court. The latest AJ is all about take-offs and landings, with multiple Air units to help get you off the ground and Formula 23 foam to ease your impact. The upper is made from strong, reinforced leno-weave fabric that'll help keep you contained no matter how fast you move—and leave your game uncompromised.",
+    description:
+      "You've got the hops and the speed—lace up in shoes that enhance what you bring to the court. The latest AJ is all about take-offs and landings, with multiple Air units to help get you off the ground and Formula 23 foam to ease your impact. The upper is made from strong, reinforced leno-weave fabric that'll help keep you contained no matter how fast you move—and leave your game uncompromised.",
   },
   {
     id: '16',
@@ -286,9 +300,10 @@ export default [
     name: 'Air Deldon',
     category: 'Men',
     brand: 'Nike',
-    price: 10795,
+    price: 130.79,
     sizes: [39, 41, 43, 45, 46],
-    description: "IElena Delle Donne's debut basketball shoe invites everyone to step in and take a shot at the game. Made for everyone, it has a collapsible heel and a large strap, so you can get in and secure it with one hand. Full-length Air cushioning and a forefoot Zoom Air unit give you an optimal blend of bounce and energy return to help you feel fresh all game long. Sparked by the fire-orange hoodie with the white logo that took the world by storm, this design celebrates the women's pro league.",
+    description:
+      "IElena Delle Donne's debut basketball shoe invites everyone to step in and take a shot at the game. Made for everyone, it has a collapsible heel and a large strap, so you can get in and secure it with one hand. Full-length Air cushioning and a forefoot Zoom Air unit give you an optimal blend of bounce and energy return to help you feel fresh all game long. Sparked by the fire-orange hoodie with the white logo that took the world by storm, this design celebrates the women's pro league.",
   },
   {
     id: '17',
@@ -302,10 +317,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b639b38352c84cd5b8e4ac5a0160c72b_9366/Samba_Vegan_Shoes_White_H01877_04_standard.jpg',
     ],
     category: 'Men',
-    price: 8999,
+    price: 109.03,
     brand: 'Adidas',
     sizes: [9.5, 10, 11],
-    description: "First introduced as an indoor football shoe, the adidas Samba has gone on to cover expansive ground. After their time on the field, these shoes made their mark on stages and streets across the globe. Today they look toward a more conscious future. Done up in faux leather, the revamped icon has eliminated any usage of animal based materials. The look is exactly the same as the original, right down to the famous T-toe. Made with vegan alternatives to animal-derived ingredients or materials.",
+    description:
+      'First introduced as an indoor football shoe, the adidas Samba has gone on to cover expansive ground. After their time on the field, these shoes made their mark on stages and streets across the globe. Today they look toward a more conscious future. Done up in faux leather, the revamped icon has eliminated any usage of animal based materials. The look is exactly the same as the original, right down to the famous T-toe. Made with vegan alternatives to animal-derived ingredients or materials.',
   },
   {
     id: '18',
@@ -320,10 +336,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c06fe4f463b46029a14ae3201263225_9366/NMD_R1_Shoes_Black_GX6978_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b2bc8a9245c74eb3908eae3201262106_9366/NMD_R1_Shoes_Black_GX6978_04_standard.jpg',
     ],
-    price: 7799.5,
+    price: 94.49,
     sizes: [9.5, 10, 11],
     brand: 'Adidas',
-    description: "Running-inspired style made for everyday exploration. This remastered version of the adidas NMD_R1 is the cutting-edge evolution of the original '80s-inspired shoes with painted plug edges and colourful lace tips to add fresh updates. A stretchy knit upper crafted hugs your foot for comfort on the go. Long commutes and slick city sidewalks are no problem, thanks to the BOOST cushioning and grippy rubber outsole beneath your feet.",
+    description:
+      "Running-inspired style made for everyday exploration. This remastered version of the adidas NMD_R1 is the cutting-edge evolution of the original '80s-inspired shoes with painted plug edges and colourful lace tips to add fresh updates. A stretchy knit upper crafted hugs your foot for comfort on the go. Long commutes and slick city sidewalks are no problem, thanks to the BOOST cushioning and grippy rubber outsole beneath your feet.",
   },
   {
     id: '19',
@@ -338,10 +355,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ccfbacc1e64547029d9cad7800abfd6f_9366/Ultraboost_22_Shoes_Black_GZ0127_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1786a575756546bcb3d1ad7800ac0517_9366/Ultraboost_22_Shoes_Black_GZ0127_42_detail.jpg',
     ],
-    price: 17999.0,
+    price: 218.08,
     sizes: [6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11],
     brand: 'Adidas',
-    description: "These Ultraboost running shoes serve up comfort and responsiveness. You'll be riding on a BOOST midsole for endless energy, with a Linear Energy Push system and a Continental™ Rubber outsole. This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic —  reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean.",
+    description:
+      "These Ultraboost running shoes serve up comfort and responsiveness. You'll be riding on a BOOST midsole for endless energy, with a Linear Energy Push system and a Continental™ Rubber outsole. This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic —  reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean.",
   },
   {
     id: '20',
@@ -355,10 +373,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9424c14f45f74ab5bec8af9000d956a5_9366/Ultraboost_Light_Shoes_Blue_HP3343_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0851bff937084d7dbc66af9000d9608a_9366/Ultraboost_Light_Shoes_Blue_HP3343_42_detail.jpg',
     ],
-    price: 18999.0,
+    price: 230.2,
     sizes: [6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11],
     brand: 'Adidas',
-    description: "Experience epic energy with the new Ultraboost Light, our lightest Ultraboost ever. The magic lies in the Light BOOST midsole, a new generation of adidas BOOST. Its unique molecule design achieves the lightest BOOST foam to date. With hundreds of BOOST capsules bursting with energy and ultimate cushioning and comfort, some feet really can have it all.",
+    description:
+      'Experience epic energy with the new Ultraboost Light, our lightest Ultraboost ever. The magic lies in the Light BOOST midsole, a new generation of adidas BOOST. Its unique molecule design achieves the lightest BOOST foam to date. With hundreds of BOOST capsules bursting with energy and ultimate cushioning and comfort, some feet really can have it all.',
   },
   {
     id: '21',
@@ -372,10 +391,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1be53c1530a74d0fa97faf5b0039ec5a_9366/Ultraboost_1.0_Marimekko_Shoes_Black_GZ2565_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdba2f7df58a4ab98b5baf5b003a52f0_9366/Ultraboost_1.0_Marimekko_Shoes_Black_GZ2565_42_detail.jpg',
     ],
-    price: 18999.0,
+    price: 230.2,
     sizes: [9.5, 10, 11],
     brand: 'Adidas',
-    description: "Modern tech meets retro style. These striking adidas Ultraboost running shoes are the result of a team-up between adidas and design house Marimekko. The sock-like adidas PRIMEKNIT upper lets air flow, while BOOST provides energy return and instant comfort with each step. A Continental™ rubber outsole gives you the traction you need to tackle new routes with confidence.",
+    description:
+      'Modern tech meets retro style. These striking adidas Ultraboost running shoes are the result of a team-up between adidas and design house Marimekko. The sock-like adidas PRIMEKNIT upper lets air flow, while BOOST provides energy return and instant comfort with each step. A Continental™ rubber outsole gives you the traction you need to tackle new routes with confidence.',
   },
   {
     id: '22',
@@ -389,10 +409,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b5c499e5f24a4e269c9eaedf00aaa673_9366/Ultra_4DFWD_Shoes_Brown_HP7599_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ece7feed1c824f378915aedf00aab16d_9366/Ultra_4DFWD_Shoes_Brown_HP7599_42_detail.jpg',
     ],
-    price: 17999,
+    price: 218.08,
     sizes: [6, 7, 8, 9, 10, 11, 12],
     brand: 'Adidas',
-    description: "You run. We innovate to make it feel easier. That's where the adidas Ultra 4DFWD Shoes come in, combining our adidas 4D midsole with the beloved adidas PRIMEKNIT+ upper. Their unique lattice structure compresses at impact, redirecting your energy into forward motion. Whether you're running near or far, fast or slow, you get a smooth ride that feels more like gliding than pounding on pavement.",
+    description:
+      "You run. We innovate to make it feel easier. That's where the adidas Ultra 4DFWD Shoes come in, combining our adidas 4D midsole with the beloved adidas PRIMEKNIT+ upper. Their unique lattice structure compresses at impact, redirecting your energy into forward motion. Whether you're running near or far, fast or slow, you get a smooth ride that feels more like gliding than pounding on pavement.",
   },
   {
     id: '23',
@@ -406,10 +427,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9073d8c2b54042d9845faf5d01077077_9366/Gazelle_85_Shoes_Green_GY2532_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/79ec8b683a7a4fca9477af5d01077b11_9366/Gazelle_85_Shoes_Green_GY2532_42_detail.jpg',
     ],
-    price: 12999.0,
+    price: 157.5,
     sizes: [6, 7, 8, 9, 10, 11, 12],
     brand: 'Adidas',
-    description: "An adidas icon through and through, the Gazelle has been worn by everyone from football fans to skaters to club kids. This pair looks back to a more obscure pair released in 1985. It's the Gazelle you know and covet, but with a refined shape, reworked toe overlay, higher foxing tape and slightly modified 3-Stripes. Step into the leather lining and show off the soft premium suede.",
+    description:
+      "An adidas icon through and through, the Gazelle has been worn by everyone from football fans to skaters to club kids. This pair looks back to a more obscure pair released in 1985. It's the Gazelle you know and covet, but with a refined shape, reworked toe overlay, higher foxing tape and slightly modified 3-Stripes. Step into the leather lining and show off the soft premium suede.",
   },
   {
     id: '24',
@@ -423,10 +445,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/966b5a705e184211b7c5af9b00e96b2a_9366/Pureboost_22_HEAT.RDY_Shoes_White_GY4706_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/57b2fcfe3b964ddc9688af9b00e973b5_9366/Pureboost_22_HEAT.RDY_Shoes_White_GY4706_42_detail.jpg',
     ],
-    price: 12999.0,
+    price: 157.5,
     sizes: [6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 11, 12],
     brand: 'Adidas',
-    description: "Don't let the heat of the day keep you from getting out for your lunchtime run. These adidas running shoes are built with HEAT.RDY tech to keep you going in hot conditions. The upper is designed for maximum airflow to help you stay on pace in rising temperatures, and responsive BOOST cushioning delivers energy return with every step.",
+    description:
+      "Don't let the heat of the day keep you from getting out for your lunchtime run. These adidas running shoes are built with HEAT.RDY tech to keep you going in hot conditions. The upper is designed for maximum airflow to help you stay on pace in rising temperatures, and responsive BOOST cushioning delivers energy return with every step.",
   },
   {
     id: '25',
@@ -441,10 +464,11 @@ export default [
 
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/20eca8ab01b74b58aa8daf5c00b2c304_9366/adidas_by_Stella_McCartney_Seeulater_Shoes_Black_H06157_42_detail.jpg',
     ],
-    price: 16999.0,
+    price: 205.96,
     sizes: [4.5, 5, 6, 7, 8],
     brand: 'Adidas',
-    description: "The inspiration of these adidas by Stella McCartney hiking boots is clear — mountaineering equipment. Climbing rope laces lock your feet in securely and comfortably. Add in the rugged, durable outsole, you can feel confident in your footing as you take on unpredictable terrain. Speaking of unpredictability in nature, when the weather shifts, the breathable, water-repellent mesh upper makes sure you can still get after your adventure. With these shoes, very little stands in your way.",
+    description:
+      'The inspiration of these adidas by Stella McCartney hiking boots is clear — mountaineering equipment. Climbing rope laces lock your feet in securely and comfortably. Add in the rugged, durable outsole, you can feel confident in your footing as you take on unpredictable terrain. Speaking of unpredictability in nature, when the weather shifts, the breathable, water-repellent mesh upper makes sure you can still get after your adventure. With these shoes, very little stands in your way.',
   },
   {
     id: '26',
@@ -458,10 +482,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c9f618daf28042b9bc32aed70147cabb_9366/NMD_R1_Shoes_White_GX9885_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0367e70095f74c34bea5aed70147d33a_9366/NMD_R1_Shoes_White_GX9885_42_detail.jpg',
     ],
-    price: 12999.0,
+    price: 157.5,
     sizes: [5, 6, 7, 8, 9, 10, 11, 12, 13],
     brand: 'Adidas',
-    description: "We made the adidas NMD_R1 shoes to help you tackle your daily challenges and adventures. But this pair is also made to celebrate your love of sport. Bright colours are borrowed from football team colours — a celebration that you can wear on the sidelines or out in the city. BOOST cushioning keeps your feet comfortable, whether you're cheering your heart out or going about your day.",
+    description:
+      "We made the adidas NMD_R1 shoes to help you tackle your daily challenges and adventures. But this pair is also made to celebrate your love of sport. Bright colours are borrowed from football team colours — a celebration that you can wear on the sidelines or out in the city. BOOST cushioning keeps your feet comfortable, whether you're cheering your heart out or going about your day.",
   },
   {
     id: '27',
@@ -475,10 +500,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4f64d101d4c148828ee3af08003162fd_9366/D.O.N._Issue_3_Shoes_Blue_GW3951_04_standard.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8794f4d7fe974b678884af0800315fb9_9366/D.O.N._Issue_3_Shoes_Blue_GW3951_05_standard.jpg',
     ],
-    price: 10999.0,
+    price: 133.26,
     sizes: [6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 11, 12],
     brand: 'Adidas',
-    description: "Donovan Mitchell's third signature shoes from adidas Basketball celebrate Spida's journey to becoming one of the game's best players. This version of the D.O.N. Issue #3 features all the signature Mitchell details while also highlighting Don's other love: video games. Whether he's dominating the hardwood or dominating his favourite console games, Mitchell is all about winning. A badge on the tongue celebrates the collaboration between adidas Basketball and Ninja, one of the best gamers there is.",
+    description:
+      "Donovan Mitchell's third signature shoes from adidas Basketball celebrate Spida's journey to becoming one of the game's best players. This version of the D.O.N. Issue #3 features all the signature Mitchell details while also highlighting Don's other love: video games. Whether he's dominating the hardwood or dominating his favourite console games, Mitchell is all about winning. A badge on the tongue celebrates the collaboration between adidas Basketball and Ninja, one of the best gamers there is.",
   },
   {
     id: '28',
@@ -492,10 +518,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4b2573310ec498589e6af290129267f_9366/BYW_Select_Shoes_Black_IG4949_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/79f51560f7a74a208fdcaf2901297a66_9366/BYW_Select_Shoes_Black_IG4949_42_detail.jpg',
     ],
-    price: 13999.0,
+    price: 169.61,
     sizes: [5, 6, 7, 8, 9, 10, 11, 12, 13],
     brand: 'Adidas',
-    description: "Keep that pep in your step all game long. These adidas basketball shoes have Lightstrike cushioning that keeps you comfortable without weighing you down. BOOST returns energy with every step you take on the hardwood, so you always have fuel left in the tank to perform in the clutch.",
+    description:
+      'Keep that pep in your step all game long. These adidas basketball shoes have Lightstrike cushioning that keeps you comfortable without weighing you down. BOOST returns energy with every step you take on the hardwood, so you always have fuel left in the tank to perform in the clutch.',
   },
   {
     id: '29',
@@ -509,10 +536,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/861d7fe6f7be496c9a7faf8e00fbb20c_9366/adidas_x_Marimekko_Supernova_2.0_Shoes_Black_HP3101_43_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/59171e033d254be3b77eaf8e00fba074_9366/adidas_x_Marimekko_Supernova_2.0_Shoes_Black_HP3101_41_detail.jpg',
     ],
-    price: 9999.0,
+    price: 121.15,
     sizes: [4.5, 5, 6, 7, 8],
     brand: 'Adidas',
-    description: "Marimekko makes prints to empower everyone to express themselves. As a runner, that means lacing on your adidas running shoes and hitting the pavement. Whether you're out there to chase goals or mental clarity, these shoes support your efforts with a hybrid midsole. Springy Bounce combines with responsive BOOST cushioning for a soft and energetic feel.",
+    description:
+      "Marimekko makes prints to empower everyone to express themselves. As a runner, that means lacing on your adidas running shoes and hitting the pavement. Whether you're out there to chase goals or mental clarity, these shoes support your efforts with a hybrid midsole. Springy Bounce combines with responsive BOOST cushioning for a soft and energetic feel.",
   },
   {
     id: '30',
@@ -527,10 +555,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cbdb296eaaa74e2d939eaf77007ed7e2_9366/IND_TOP_V2_Blue_GC0701_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fc236b890ee7487dba93af77007ed4f7_9366/IND_TOP_V2_Blue_GC0701_43_detail.jpg',
     ],
-    price: 4999.99,
+    price: 60.58,
     sizes: [6, 7, 8, 9, 10, 11, 12],
     brand: 'Adidas',
-    description: "An adidas icon through and through, the Gazelle has been worn by everyone from football fans to skaters to club kids. This pair looks back to a more obscure pair released in 1985. It's the Gazelle you know and covet, but with a refined shape, reworked toe overlay, higher foxing tape and slightly modified 3-Stripes. Step into the leather lining and show off the soft premium suede.",
+    description:
+      "An adidas icon through and through, the Gazelle has been worn by everyone from football fans to skaters to club kids. This pair looks back to a more obscure pair released in 1985. It's the Gazelle you know and covet, but with a refined shape, reworked toe overlay, higher foxing tape and slightly modified 3-Stripes. Step into the leather lining and show off the soft premium suede.",
   },
   {
     id: '31',
@@ -544,10 +573,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d2422812ecbc4c1fbd98af9c01653db1_9366/X_PLRBOOST_Shoes_Grey_ID9437_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c26a566c4bf84a9b9d97af9c016546c7_9366/X_PLRBOOST_Shoes_Grey_ID9437_42_detail.jpg',
     ],
-    price: 17999.0,
+    price: 218.08,
     sizes: [6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 11, 12],
     brand: 'Adidas',
-    description: "These adidas running-style shoes won't spend much time on your shoe rack. The soft, sleek upper is lined for comfort and set atop a BOOST midsole for incredible energy return on action-packed days. A striking, speckled sole gives low-key outfits an instant lift.",
+    description:
+      "These adidas running-style shoes won't spend much time on your shoe rack. The soft, sleek upper is lined for comfort and set atop a BOOST midsole for incredible energy return on action-packed days. A striking, speckled sole gives low-key outfits an instant lift.",
   },
   {
     id: '32',
@@ -563,10 +593,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2cb6da9334fa43b39d82afb000816f78_9366/Adizero_Adios_Pro_3_Shoes_White_GW7261_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ef63fd5206334ecfa45cafb0008182b3_9366/Adizero_Adios_Pro_3_Shoes_White_GW7261_43_detail.jpg',
     ],
-    price: 24999.0,
+    price: 302.9,
     sizes: [8],
     brand: 'Adidas',
-    description: "Running goals, meet the adidas Adizero Adios 3 Pro running shoes. They're tuned for speed, so you can break away from the starting line and chase PBs on race day with confidence. On 10K to marathon courses, three layers of resilient Lightstrike cushioning keep your feet moving in comfort, while ENERGYRODS deliver lightweight stiffness to limit energy loss. A Continental™ Rubber outsole grips in all conditions.",
+    description:
+      "Running goals, meet the adidas Adizero Adios 3 Pro running shoes. They're tuned for speed, so you can break away from the starting line and chase PBs on race day with confidence. On 10K to marathon courses, three layers of resilient Lightstrike cushioning keep your feet moving in comfort, while ENERGYRODS deliver lightweight stiffness to limit energy loss. A Continental™ Rubber outsole grips in all conditions.",
   },
   {
     id: '33',
@@ -580,10 +611,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f2aa5699c7e142a68ae1af1b01775ccc_9366/Web_BOOST_Shoes_White_HR0085_41_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9da5b84b1d464282a872af1b0177aad6_9366/Web_BOOST_Shoes_White_HR0085_42_detail.jpg',
     ],
-    price: 21999.0,
+    price: 266.55,
     sizes: [5, 6, 7, 8, 9, 10, 11, 12],
     brand: 'Adidas',
-    description: "Made in collaboration with Pharrell Williams, the Hu NMD Animal Print pack features embroidered details that provide texture to the sock-like material. The product features a midfoot TPU cage for support and two pairs of reflective rope laces for style versatility.",
+    description:
+      'Made in collaboration with Pharrell Williams, the Hu NMD Animal Print pack features embroidered details that provide texture to the sock-like material. The product features a midfoot TPU cage for support and two pairs of reflective rope laces for style versatility.',
   },
   {
     id: '34',
@@ -598,10 +630,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/45c6b7b150024fa898efad7501096c20_9366/HU_NMD_SHOES_Grey_GZ1664_41_detail.jpg',
       'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/67a3eac8c37246ce8107ad75010a005e_9366/HU_NMD_SHOES_Grey_GZ1664_42_detail.jpg',
     ],
-    price: 21999.0,
+    price: 266.55,
     sizes: [6, 7, 8, 9, 10],
     brand: 'Adidas',
-    description: "Pairing vibrant colours with words that serve as reminders, musician and designer Pharrell Williams champions our fight for and alongside the community. These shoes rework the iconic NMD silhouette with text that stands out on the adidas Primeknit upper. Boost cushioning provides endless energy return and comfort with every step.",
+    description:
+      'Pairing vibrant colours with words that serve as reminders, musician and designer Pharrell Williams champions our fight for and alongside the community. These shoes rework the iconic NMD silhouette with text that stands out on the adidas Primeknit upper. Boost cushioning provides endless energy return and comfort with every step.',
   },
   {
     id: '35',
@@ -617,10 +650,11 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/397e347db93e43a999c0aed70159dc02_9366/Ultra_4D_Shoes_Black_GY5913_42_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/74f6443deb2342e0a857aed70159e69e_9366/Ultra_4D_Shoes_Black_GY5913_43_detail.jpg',
     ],
-    price: 21999.0,
+    price: 266.55,
     sizes: [6, 7, 8, 8.5, 9, 9.5, 10, 11, 12],
     brand: 'Adidas',
-    description: "Every day is an opportunity to improve: your expectations, your outlook, your run. The Ultra 4D is coded to help get you there, starting with a 3D-printed 4D midsole designed to stabilise your ride. Long-lasting cushioning helps you go the distance, and adidas PRIMEKNIT wraps your foot for support through every stride. ",
+    description:
+      'Every day is an opportunity to improve: your expectations, your outlook, your run. The Ultra 4D is coded to help get you there, starting with a 3D-printed 4D midsole designed to stabilise your ride. Long-lasting cushioning helps you go the distance, and adidas PRIMEKNIT wraps your foot for support through every stride. ',
   },
   {
     id: '36',
@@ -635,9 +669,10 @@ export default [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/30eb506ec3ba47eda9c9aef600e4f322_9366/Ultraboost_22_Made_with_Nature_Shoes_White_HP9183_42_detail.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9bec6ee6778648e4a3caaef600e4fb72_9366/Ultraboost_22_Made_with_Nature_Shoes_White_HP9183_43_detail.jpg',
     ],
-    price: 18999.0,
+    price: 230.2,
     sizes: [6, 7, 8, 9, 10, 11],
     brand: 'Adidas',
-    description: "Whether it's a leafy neighbourhood, a creekside trail or the wooded track at the edge of town, nature provides beauty and solace for some of your best runs. Take a step toward preserving it with these running shoes that are made with natural and renewable resources. They offer all the best features of the iconic Ultraboost, including responsive BOOST cushioning and foot-hugging adidas PRIMEKNIT. So they feel good while doing good.",
+    description:
+      "Whether it's a leafy neighbourhood, a creekside trail or the wooded track at the edge of town, nature provides beauty and solace for some of your best runs. Take a step toward preserving it with these running shoes that are made with natural and renewable resources. They offer all the best features of the iconic Ultraboost, including responsive BOOST cushioning and foot-hugging adidas PRIMEKNIT. So they feel good while doing good.",
   },
 ];

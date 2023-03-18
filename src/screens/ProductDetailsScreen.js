@@ -85,7 +85,7 @@ const ProductDetailsScreen = ({ route }) => {
               }}
             />
           </View>
-          <Text style={styles.price}>₹{product.price}</Text>
+          <Text style={styles.price}>${product.price}</Text>
 
           <Text style={styles.description}>
             {desc !== undefined ? desc : product.description.slice(0, 100)}{' '}

@@ -22,7 +22,6 @@ import { useGetProductsQuery } from '../store/apiSlice';
 const HomeScreen = ({ navigation }) => {
   const [category, setCategory] = React.useState('Adidas');
   const dispatch = useDispatch();
-  const featuredProducts = [];
   // we are getting data from the store which is products and we are getting the products from the store which is defined in the initial state in the productsSlice.js
   const wishlistedProducts = useSelector(
     (state) => state.products.wishListedProducts,

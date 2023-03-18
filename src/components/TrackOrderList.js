@@ -5,39 +5,39 @@ import { useDispatch } from 'react-redux';
 import { productsSlice } from '../store/ProductsSlice';
 import { useNavigation } from '@react-navigation/native';
 
-const WishlistItem = ({ cartItem }) => {
+const TrackOrderListItem = ({ orders }) => {
   const dispatch = useDispatch();
-  // console.log(cartItem);
   const navigation = useNavigation();
 
-  return (
+  return orders.map((item) => (
     <Pressable
       style={styles.container}
       onPress={() => {
         {
           //update selected products in the store
-          dispatch(
-            productsSlice.actions.setSelectedProducts(cartItem.wishlistItem.id),
-          );
+          dispatch(productsSlice.actions.setSelectedProducts(item.id));
           navigation.navigate('ProductDetails', {
-            id: cartItem.wishlistItem.id,
+            id: item.id,
           });
         }
       }}>
       {/* we have managed to display the image and the text side by side by creating two view which one for image and rest for the right side part and adding flexdirection: 'row' so it will align the items in row */}
-      <Image
-        source={{ uri: cartItem.wishlistItem.image }}
-        style={styles.image}
-      />
+      <Image source={{ uri: item.image }} style={styles.image} />
       <View style={styles.contentContainer}>
-        <Text style={styles.name}>{cartItem.wishlistItem.name}</Text>
-        <Text style={styles.size}>Size {cartItem.size}</Text>
+        <Text style={styles.name}>{item.name}</Text>
         <View style={styles.footer}>
-          <Text style={styles.itemTotal}>${cartItem.wishlistItem.price}</Text>
+          <Text style={styles.itemTotal}>${item.price}</Text>
         </View>
       </View>
     </Pressable>
-  );
+  ));
+  // orders.map((item) => (
+  //   <View>
+  //     <Text>{item.name}</Text>
+  //     <Text>{item.price}</Text>
+
+  //   </View>
+  // ))
 };
 
 const styles = StyleSheet.create({
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WishlistItem;
+export default TrackOrderListItem;
