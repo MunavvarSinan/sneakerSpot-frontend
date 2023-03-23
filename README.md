@@ -60,7 +60,7 @@ If you are interested in contributing to the backend code, please fork the repos
  3. Start the application by ```npm start``` or ```expo start```
  
  ## Contribution
- Contributions are welcome! Please fork the repository and submit a pull request. To know more please refer the ```contributing.md``` file. 
+ Contributions are welcome! Please fork the repository and submit a pull request. To know more please refer the [contributing.md](https://github.com/MunavvarSinan/shoeStore-frontend/blob/master/contributing.md) file. 
  
  ## License
 This project is licensed under the MIT License.
