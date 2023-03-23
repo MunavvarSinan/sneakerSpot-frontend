@@ -48,3 +48,5 @@ When submitting a pull request, please follow these guidelines:
 3. Write tests to ensure that your changes are working as expected.
 4. Keep your pull request small and focused. Large pull requests are difficult to review and merge.
 
+## Code of conduct 
+Please note that all contributors to this project are expected to follow the project's [code of conduct](https://github.com/MunavvarSinan/shoeStore-frontend/blob/master/CODE_OF_CONDUCT.md)
